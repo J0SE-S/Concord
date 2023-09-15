@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cd5yabtsqnp0x"]
+
+[ext_resource type="Script" path="res://Scripts/world.gd" id="1_nbk05"]
+[ext_resource type="PackedScene" uid="uid://508denx2qf6r" path="res://Scenes/player.tscn" id="2_rqc6a"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_nbk05")
+player_scene = ExtResource("2_rqc6a")
+
+[node name="NetworkObjects" type="Node2D" parent="."]
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+spawn_path = NodePath("../NetworkObjects")

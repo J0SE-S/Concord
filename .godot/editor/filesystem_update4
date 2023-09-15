@@ -1,4 +1,9 @@
+res://player.tscn
 res://main_menu.gd
 res://world.tscn
-res://player.tscn
+res://world.gd
 res://main_menu.tscn
+res://Scenes/main_menu.tscn
+res://Scenes/player.tscn
+res://Scripts/main_menu.gd
+res://Scenes/world.tscn
