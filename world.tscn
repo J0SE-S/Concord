@@ -1,3 +1,9 @@
 [gd_scene format=3 uid="uid://cd5yabtsqnp0x"]
 
 [node name="World" type="Node2D"]
+
+[node name="NetworkObjects" type="Node2D" parent="."]
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://player.tscn")
+spawn_path = NodePath("../NetworkObjects")

@@ -1,4 +1,11 @@
+Sprite2D
+RayCast2D
+CollisionShape2D
+CharacterBody2D
 Node2D
+MultiplayerSynchronizer
+MultiplayerSpawner
+TileMap
 MarginContainer
 VBoxContainer
 Button
