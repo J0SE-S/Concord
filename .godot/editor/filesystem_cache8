@@ -1,3 +1,6 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1694731510
+::res://::1694735399
 icon.svg::CompressedTexture2D::383280478923293990::1694731507::1694731510::1::::<><>::
+main_menu.gd::GDScript::-1::1694735261::0::1::::<>Node2D<>::
+main_menu.tscn::PackedScene::3361826449985635263::1694735365::0::1::::<><>::res://main_menu.gd
+README.md::TextFile::-1::1694731627::0::1::::<><>::

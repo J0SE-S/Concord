@@ -11,9 +11,10 @@ config_version=5
 [application]
 
 config/name="Concord"
+run/main_scene="res://main_menu.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 config/icon="res://icon.svg"
 
-[rendering]
+[display]
 
-renderer/rendering_method="mobile"
+window/size/resizable=false
