@@ -2,13 +2,13 @@ extends CharacterBody2D
 
 @export var cam: Camera2D
 
-const SPEED = 300.0
+const SPEED = 100.0
 
-func _enter_tree():
+func _ready():
 	set_multiplayer_authority(name.to_int())
 	cam.set_enabled(is_multiplayer_authority())
 
-func _process(delta):
+func _process(_delta):
 	if is_multiplayer_authority():
 		if Input.is_action_pressed("exit"):
 			$"../".exit_game(name)
