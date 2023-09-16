@@ -1,9 +1,8 @@
-res://player.tscn
-res://main_menu.gd
-res://world.tscn
-res://world.gd
-res://main_menu.tscn
-res://Scenes/main_menu.tscn
 res://Scenes/player.tscn
 res://Scripts/main_menu.gd
+res://Scenes/main_menu.tscn
 res://Scenes/world.tscn
+res://Scripts/world.gd
+res://Scenes/main.tscn
+res://Scripts/main.gd
+res://Scripts/Player.gd

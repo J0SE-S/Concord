@@ -6,14 +6,17 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xhjv3"]
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("cam")]
 script = ExtResource("1_gxivx")
+cam = NodePath("Camera2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(20, 30)
 texture = SubResource("PlaceholderTexture2D_kvpd6")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_xhjv3")
 
-[node name="RayCast2D" type="RayCast2D" parent="."]
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]

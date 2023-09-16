@@ -11,3 +11,5 @@ player_scene = ExtResource("2_rqc6a")
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
 spawn_path = NodePath("../NetworkObjects")
+
+[node name="Camera2D" type="Camera2D" parent="."]
