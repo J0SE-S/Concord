@@ -5,6 +5,8 @@
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_kvpd6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xhjv3"]
+radius = 32.0
+height = 96.0
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_v3b26"]
 properties/0/path = NodePath(".:position")
@@ -13,11 +15,22 @@ properties/0/sync = true
 properties/0/watch = false
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("cam")]
+z_index = 10
+collision_mask = 0
 script = ExtResource("1_gxivx")
 cam = NodePath("Camera2D")
 
+[node name="NameTag" type="Label" parent="."]
+offset_left = -576.0
+offset_top = -80.0
+offset_right = 576.0
+offset_bottom = -57.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(20, 30)
+position = Vector2(2.38419e-07, -3.8147e-06)
+scale = Vector2(64, 96)
 texture = SubResource("PlaceholderTexture2D_kvpd6")
 
 [node name="Camera2D" type="Camera2D" parent="."]

@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_rjp15"]
 [ext_resource type="PackedScene" uid="uid://508denx2qf6r" path="res://Scenes/player.tscn" id="2_0pux8"]
+[ext_resource type="TileSet" uid="uid://bmfcmd38iy45d" path="res://Sprites/Tiles/tiles.tres" id="3_8m2w6"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_jae37"]
-
-[node name="Main" type="Node2D" node_paths=PackedStringArray("network_objects_node")]
+[node name="Main" type="Node2D" node_paths=PackedStringArray("network_objects_node", "cam")]
 script = ExtResource("1_rjp15")
 player_scene = ExtResource("2_0pux8")
 network_objects_node = NodePath("NetworkObjects")
+cam = NodePath("Camera2D")
 
 [node name="NetworkObjects" type="Node2D" parent="."]
 
@@ -18,6 +18,11 @@ spawn_path = NodePath("../NetworkObjects")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(-5536, 0)
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("3_8m2w6")
+format = 2
+layer_0/tile_data = PackedInt32Array(65535, 131073, 5, 0, 131073, 5, -65536, 131073, 5, -1, 131073, 5, -65537, 131073, 5, -131072, 131073, 5, -65535, 131073, 5, 1, 131073, 5, 65536, 131073, 5, 131071, 131073, 5, 65534, 131073, 5, -2, 131073, 5, 131070, 65537, 3, 196607, 65537, 3, 131072, 65537, 3, 65537, 65537, 3, 2, 65537, 3, -65534, 65537, 3, -131071, 65537, 3, -196608, 65537, 3, -131073, 65537, 3, -65538, 65537, 3, -3, 65537, 3, 65533, 65537, 3, 65532, 393217, 3, -4, 393217, 3, -65539, 393217, 3, -131074, 393217, 3, -196609, 393217, 3, -262144, 393217, 3, -196607, 393217, 3, -131070, 393217, 3, -65533, 393217, 3, 3, 393217, 3, 65538, 393217, 3, 131073, 393217, 3, 196608, 393217, 3, 262143, 393217, 3, 196606, 393217, 3, 131069, 393217, 3)
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -6112.0
@@ -77,12 +82,7 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 96
 text = "Quit"
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-366.296, -258.903)
-scale = Vector2(28.5928, 21.8064)
-texture = SubResource("PlaceholderTexture2D_jae37")
-
 [connection signal="button_up" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/PlayButton" to="." method="_on_play_button_button_up"]
-[connection signal="button_up" from="MarginContainer/VBoxContainer/VBoxContainer2/MarginContainer/SettingsButton" to="." method="_on_play_button_button_up"]
 [connection signal="button_up" from="MarginContainer/VBoxContainer/VBoxContainer2/MarginContainer/SettingsButton" to="." method="_on_settings_button_button_up"]
+[connection signal="button_up" from="MarginContainer/VBoxContainer/VBoxContainer2/MarginContainer/SettingsButton" to="." method="_on_play_button_button_up"]
 [connection signal="button_up" from="MarginContainer/VBoxContainer/VBoxContainer3/MarginContainer/QuitButton" to="." method="_on_quit_button_button_up"]

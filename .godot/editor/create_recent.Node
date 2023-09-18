@@ -1,3 +1,5 @@
+Label
+TileMap
 Node2D
 MultiplayerSpawner
 Camera2D
@@ -6,10 +8,8 @@ Sprite2D
 RayCast2D
 CollisionShape2D
 CharacterBody2D
-TileMap
 MarginContainer
 VBoxContainer
 Button
 RichTextLabel
-Label
 ColorRect
