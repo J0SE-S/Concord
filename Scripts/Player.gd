@@ -12,8 +12,8 @@ func _ready():
 	if (is_multiplayer_authority()):
 		cam.make_current()
 		
-#func set_name_tag(new_name):
-	#name_tag.text = str(new_name)
+func set_name_tag(new_name):
+	name_tag.text = str(new_name)
 
 func _process(_delta):
 	if is_multiplayer_authority():

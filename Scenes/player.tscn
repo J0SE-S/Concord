@@ -14,17 +14,19 @@ properties/0/spawn = true
 properties/0/sync = true
 properties/0/watch = false
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("cam")]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("cam", "name_tag")]
 z_index = 10
 collision_mask = 0
 script = ExtResource("1_gxivx")
 cam = NodePath("Camera2D")
+name_tag = NodePath("NameTag")
 
 [node name="NameTag" type="Label" parent="."]
 offset_left = -576.0
 offset_top = -80.0
 offset_right = 576.0
 offset_bottom = -57.0
+text = "Username"
 horizontal_alignment = 1
 vertical_alignment = 1
 

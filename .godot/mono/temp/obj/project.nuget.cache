@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "2jFSFAX0FHfuzFyBdBoD2IZl7bQ2rmb4V03dvyehLyaB6i4qg+fAXyy0eDnYzf6ki/bqtXqQJLxRn93Xw/M3qA==",
+  "success": true,
+  "projectFilePath": "/home/jsimutis/Documents/Godot/Projects/Concord/Concord.csproj",
+  "expectedPackageFiles": [
+    "/home/jsimutis/.nuget/packages/godot.sourcegenerators/4.1.1/godot.sourcegenerators.4.1.1.nupkg.sha512",
+    "/home/jsimutis/.nuget/packages/godotsharp/4.1.1/godotsharp.4.1.1.nupkg.sha512",
+    "/home/jsimutis/.nuget/packages/godotsharpeditor/4.1.1/godotsharpeditor.4.1.1.nupkg.sha512",
+    "/home/jsimutis/.nuget/packages/microsoft.netcore.app.ref/6.0.22/microsoft.netcore.app.ref.6.0.22.nupkg.sha512",
+    "/home/jsimutis/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.22/microsoft.aspnetcore.app.ref.6.0.22.nupkg.sha512"
+  ],
+  "logs": []
+}

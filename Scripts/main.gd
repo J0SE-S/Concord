@@ -7,6 +7,7 @@ var peer = ENetMultiplayerPeer.new()
 @export var spawn_positions : PackedVector2Array
 var user_key : String
 var server_key : String
+var port = 10273
 
 func _ready():
 	var auth = FileAccess.open("user://auth.dat", FileAccess.READ)
@@ -15,21 +16,17 @@ func _ready():
 	auth.close()
 
 func _on_play_button_button_up():
-	#if (is_server):
-	peer.create_server(10273)
-	multiplayer.peer_connected.connect(add_player)
-	add_player()
-	multiplayer.multiplayer_peer = peer
-	#cam.enabled = false
-	#else:
-	#	peer.create_client("127.0.0.1", 10273)
-	#	multiplayer.multiplayer_peer = peer
-	#	cam.enabled = false
+	if (server_key.hex_decode().get_string_from_utf8() == "127.0.0.1"):
+		peer.create_server(port)
+		multiplayer.peer_connected.connect(add_player)
+		add_player()
+		multiplayer.multiplayer_peer = peer
+	else:
+		_on_settings_button_button_up()
 
 func _on_settings_button_button_up():
-	peer.create_client(server_key.hex_decode().get_string_from_utf8(), 10273)
+	peer.create_client(server_key.hex_decode().get_string_from_utf8(), port)
 	multiplayer.multiplayer_peer = peer
-	cam.enabled = false
 
 func _on_quit_button_button_up():
 	get_tree().quit()
@@ -37,7 +34,7 @@ func _on_quit_button_button_up():
 func add_player(id = 1):
 	var player = player_scene.instantiate()
 	player.name = str(id)
-	#player.set_name_tag(user_key)
+	player.set_name_tag(user_key.hex_decode().get_string_from_utf8())
 	network_objects_node.add_child(player)
 
 func exit_game(id):
