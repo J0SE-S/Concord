@@ -1,2 +1,0 @@
-﻿44681
-/home/jsimutis/Documents/Godot/Godot_v4.1.1-stable_mono_linux.x86_64

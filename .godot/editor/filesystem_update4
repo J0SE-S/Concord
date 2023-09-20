@@ -1,8 +1,7 @@
 res://Scenes/main.tscn
 res://Scripts/main_menu.gd
 res://Sprites/Tiles/tiles.tres
-res://Scenes/VoiceManager.cs
-res://Scenes/player.tscn
-res://Scripts/main.gd
 res://addons/godot-voip/scripts/voice_instance.gd
+res://addons/godot-voip/plugin.gd
 res://addons/godot-voip/scripts/voice_orchestrator.gd
+res://Scenes/player.tscn

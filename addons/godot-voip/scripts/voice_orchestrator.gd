@@ -6,20 +6,20 @@ signal sent_voice_data
 signal created_instance
 signal removed_instance
 
-@export var recording: = false : set = _set_recording
-@export var listen: = false : set = _set_listen
+@export var recording: bool = false : set = _set_recording
+@export var listen: bool = false : set = _set_listen
 @export_range(0.0, 1.0) var input_threshold: = 0.005 : set = _set_input_threshold
 
 var instances := {}
 var _id = null
 
 func _ready() -> void:
-	get_tree().connect("connected_to_server", self, "_connected_ok")
-	get_tree().connect("server_disconnected", self, "_server_disconnected")
-	get_tree().connect("connection_failed", self, "_server_disconnected")
+	multiplayer.connected_to_server.connect(_connected_ok)
+	multiplayer.server_disconnected.connect(_server_disconnected)
+	multiplayer.connection_failed.connect(_server_disconnected)
 
-	get_tree().connect("network_peer_connected", self, "_player_connected")
-	get_tree().connect("network_peer_disconnected", self, "_player_disconnected")
+	multiplayer.peer_connected.connect(_player_connected)
+	multiplayer.peer_disconnected.connect(_player_disconnected)
 
 func _physics_process(delta: float) -> void:
 	if get_tree().has_network_peer() && get_tree().is_network_server() && _id == null:
@@ -29,18 +29,18 @@ func _physics_process(delta: float) -> void:
 		_reset()
 
 func _create_instance(id: int) -> void:
-	instance = VoiceInstance.new()
+	var instance := VoiceInstance.new()
 
 	if id == get_tree().get_network_unique_id():
 		instance.recording = recording
 		instance.listen = listen
 		instance.input_threshold = input_threshold
 
-		instance.connect("sent_voice_data", self, "_sent_voice_data")
+		instance.sent_voice_data.connect(_sent_voice_data)
 
 		_id = id
 
-	instance.connect("received_voice_data", self, "_received_voice_data")
+	instance.received_voice_data.connect(_received_voice_data)
 
 	instance.name = str(id)
 
@@ -99,8 +99,8 @@ func _player_connected(id) -> void:
 func _player_disconnected(id) -> void:
 	_remove_instance(id)
 
-func _received_voice_data(data: PoolRealArray, id: int) -> void:
+func _received_voice_data(data: Array, id: int) -> void:
 	emit_signal("received_voice_data", data, id)
 
-func _sent_voice_data(data: PoolRealArray) -> void:
+func _sent_voice_data(data: Array) -> void:
 	emit_signal("sent_voice_data", data)
