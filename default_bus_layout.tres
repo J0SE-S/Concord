@@ -1,0 +1,13 @@
+[gd_resource type="AudioBusLayout" load_steps=2 format=3 uid="uid://c0vyr38tlw7ct"]
+
+[sub_resource type="AudioEffectCapture" id="AudioEffectCapture_vfltn"]
+
+[resource]
+bus/1/name = &"VoiceMicRecorder0"
+bus/1/solo = false
+bus/1/mute = true
+bus/1/bypass_fx = false
+bus/1/volume_db = 0.0
+bus/1/send = &""
+bus/1/effect/0/effect = SubResource("AudioEffectCapture_vfltn")
+bus/1/effect/0/enabled = true

@@ -1,3 +1,4 @@
+@tool
 extends Node
 class_name VoiceOrchestrator
 
@@ -6,9 +7,9 @@ signal sent_voice_data
 signal created_instance
 signal removed_instance
 
-@export var recording: bool = false : set = _set_recording
-@export var listen: bool = false : set = _set_listen
-@export_range(0.0, 1.0) var input_threshold: = 0.005 : set = _set_input_threshold
+@export var recording: bool = false: set = _set_recording
+@export var listen: bool = false: set = _set_listen
+@export var input_threshold: = 0.005: set = _set_input_threshold
 
 var instances := {}
 var _id = null
@@ -22,25 +23,25 @@ func _ready() -> void:
 	multiplayer.peer_disconnected.connect(_player_disconnected)
 
 func _physics_process(delta: float) -> void:
-	if get_tree().has_network_peer() && get_tree().is_network_server() && _id == null:
-		_create_instance(get_tree().get_network_unique_id())
+	if multiplayer.has_multiplayer_peer() && multiplayer.is_server() && _id == null:
+		_create_instance(multiplayer.get_unique_id())
 
-	if (!get_tree().has_network_peer() || !get_tree().is_network_server()) && _id == 1:
+	if (!multiplayer.has_multiplayer_peer() || !multiplayer.is_server()) && _id == 1:
 		_reset()
 
 func _create_instance(id: int) -> void:
 	var instance := VoiceInstance.new()
 
-	if id == get_tree().get_network_unique_id():
+	if id == multiplayer.get_unique_id():
 		instance.recording = recording
 		instance.listen = listen
 		instance.input_threshold = input_threshold
 
-		instance.sent_voice_data.connect(_sent_voice_data)
+		instance.connect("sent_voice_data", Callable(self, "_sent_voice_data"))
 
 		_id = id
 
-	instance.received_voice_data.connect(_received_voice_data)
+	instance.connect("received_voice_data", Callable(self, "_received_voice_data"))
 
 	instance.name = str(id)
 
@@ -85,10 +86,10 @@ func _set_input_threshold(value: float) -> void:
 	input_threshold = value
 
 func _connected_ok() -> void:
-	if (!get_tree().has_network_peer() || !get_tree().is_network_server()) && _id == 1:
+	if (!multiplayer.has_multiplayer_peer() || !multiplayer.is_server()) && _id == 1:
 		_reset()
 
-	_create_instance(get_tree().get_network_unique_id())
+	_create_instance(multiplayer.get_unique_id())
 
 func _server_disconnected() -> void:
 	_reset()
@@ -99,8 +100,8 @@ func _player_connected(id) -> void:
 func _player_disconnected(id) -> void:
 	_remove_instance(id)
 
-func _received_voice_data(data: Array, id: int) -> void:
+func _received_voice_data(data: PackedFloat32Array, id: int) -> void:
 	emit_signal("received_voice_data", data, id)
 
-func _sent_voice_data(data: Array) -> void:
+func _sent_voice_data(data: PackedFloat32Array) -> void:
 	emit_signal("sent_voice_data", data)

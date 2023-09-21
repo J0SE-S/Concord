@@ -1,3 +1,4 @@
+@tool
 extends AudioStreamPlayer
 class_name VoiceMic
 

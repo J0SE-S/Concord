@@ -1,14 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://r8fvw401ot6a"]
+[gd_scene load_steps=5 format=3 uid="uid://r8fvw401ot6a"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_rjp15"]
 [ext_resource type="PackedScene" uid="uid://508denx2qf6r" path="res://Scenes/player.tscn" id="2_0pux8"]
 [ext_resource type="TileSet" uid="uid://bmfcmd38iy45d" path="res://Sprites/Tiles/tiles.tres" id="3_8m2w6"]
+[ext_resource type="Script" path="res://addons/godot-voip/scripts/voice_orchestrator.gd" id="3_pfolm"]
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("network_objects_node", "cam")]
 script = ExtResource("1_rjp15")
 player_scene = ExtResource("2_0pux8")
 network_objects_node = NodePath("NetworkObjects")
 cam = NodePath("Camera2D")
+
+[node name="VoiceOrchestrator" type="Node" parent="."]
+script = ExtResource("3_pfolm")
+recording = true
 
 [node name="NetworkObjects" type="Node2D" parent="."]
 
