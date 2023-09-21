@@ -1,4 +1,3 @@
-@tool
 extends Node
 class_name VoiceOrchestrator
 
@@ -37,11 +36,11 @@ func _create_instance(id: int) -> void:
 		instance.listen = listen
 		instance.input_threshold = input_threshold
 
-		instance.connect("sent_voice_data", Callable(self, "_sent_voice_data"))
+		instance.sent_voice_data.connect(_sent_voice_data)
 
 		_id = id
 
-	instance.connect("received_voice_data", Callable(self, "_received_voice_data"))
+	instance.received_voice_data.connect(_received_voice_data)
 
 	instance.name = str(id)
 

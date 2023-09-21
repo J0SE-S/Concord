@@ -47,10 +47,12 @@ func _create_voice():
 	generator.buffer_length = 0.1
 	_voice.stream = generator
 
-	_playback = _voice.get_stream_playback()
 	_voice.play()
+	_playback = _voice.get_stream_playback()
 
-@rpc("any_peer", "unreliable") func _speak(sample_data: PackedFloat32Array, id: int):
+
+@rpc("any_peer", "unreliable")
+func _speak(sample_data: PackedFloat32Array, id: int):
 	if _playback == null:
 		_create_voice()
 
@@ -94,9 +96,9 @@ func _process_mic():
 				return
 
 			if listen:
-				_speak(data, get_tree().get_unique_id())
+				_speak(data, multiplayer.get_unique_id())
 
-			rpc("_speak", data,  get_tree().get_unique_id())
+			rpc("_speak", data,  multiplayer.get_unique_id())
 			emit_signal("sent_voice_data", data)
 
 	_prev_frame_recording = recording

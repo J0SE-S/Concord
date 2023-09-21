@@ -1,8 +1,14 @@
-[gd_resource type="AudioBusLayout" load_steps=3 format=3 uid="uid://c0vyr38tlw7ct"]
+[gd_resource type="AudioBusLayout" load_steps=6 format=3 uid="uid://c0vyr38tlw7ct"]
 
 [sub_resource type="AudioEffectCapture" id="AudioEffectCapture_vfltn"]
 
 [sub_resource type="AudioEffectCapture" id="AudioEffectCapture_wo40x"]
+
+[sub_resource type="AudioEffectCapture" id="AudioEffectCapture_6ameu"]
+
+[sub_resource type="AudioEffectCapture" id="AudioEffectCapture_hk230"]
+
+[sub_resource type="AudioEffectCapture" id="AudioEffectCapture_wcbq6"]
 
 [resource]
 bus/1/name = &"VoiceMicRecorder0"
@@ -21,3 +27,27 @@ bus/2/volume_db = 0.0
 bus/2/send = &""
 bus/2/effect/0/effect = SubResource("AudioEffectCapture_wo40x")
 bus/2/effect/0/enabled = true
+bus/3/name = &"VoiceMicRecorder2"
+bus/3/solo = false
+bus/3/mute = true
+bus/3/bypass_fx = false
+bus/3/volume_db = 0.0
+bus/3/send = &""
+bus/3/effect/0/effect = SubResource("AudioEffectCapture_6ameu")
+bus/3/effect/0/enabled = true
+bus/4/name = &"VoiceMicRecorder3"
+bus/4/solo = false
+bus/4/mute = true
+bus/4/bypass_fx = false
+bus/4/volume_db = 0.0
+bus/4/send = &""
+bus/4/effect/0/effect = SubResource("AudioEffectCapture_hk230")
+bus/4/effect/0/enabled = true
+bus/5/name = &"VoiceMicRecorder4"
+bus/5/solo = false
+bus/5/mute = true
+bus/5/bypass_fx = false
+bus/5/volume_db = 0.0
+bus/5/send = &""
+bus/5/effect/0/effect = SubResource("AudioEffectCapture_wcbq6")
+bus/5/effect/0/enabled = true
