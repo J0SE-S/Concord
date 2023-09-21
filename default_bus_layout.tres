@@ -1,6 +1,8 @@
-[gd_resource type="AudioBusLayout" load_steps=2 format=3 uid="uid://c0vyr38tlw7ct"]
+[gd_resource type="AudioBusLayout" load_steps=3 format=3 uid="uid://c0vyr38tlw7ct"]
 
 [sub_resource type="AudioEffectCapture" id="AudioEffectCapture_vfltn"]
+
+[sub_resource type="AudioEffectCapture" id="AudioEffectCapture_wo40x"]
 
 [resource]
 bus/1/name = &"VoiceMicRecorder0"
@@ -11,3 +13,11 @@ bus/1/volume_db = 0.0
 bus/1/send = &""
 bus/1/effect/0/effect = SubResource("AudioEffectCapture_vfltn")
 bus/1/effect/0/enabled = true
+bus/2/name = &"VoiceMicRecorder1"
+bus/2/solo = false
+bus/2/mute = true
+bus/2/bypass_fx = false
+bus/2/volume_db = 0.0
+bus/2/send = &""
+bus/2/effect/0/effect = SubResource("AudioEffectCapture_wo40x")
+bus/2/effect/0/enabled = true

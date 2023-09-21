@@ -1,5 +1,4 @@
+res://default_bus_layout.tres
 res://Scenes/main.tscn
 res://Scripts/main_menu.gd
 res://Sprites/Tiles/tiles.tres
-res://Scenes/player.tscn
-res://addons/godot-voip/scripts/voice_orchestrator.gd
