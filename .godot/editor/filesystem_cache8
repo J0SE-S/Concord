@@ -1,7 +1,7 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1695335623
+::res://::1695340419
 default_bus_layout.tres::AudioBusLayout::6572403480006269655::1695321699::0::1::::<><>::
-export_presets.cfg::TextFile::-1::1695335534::0::1::::<><>::
+export_presets.cfg::TextFile::-1::1695336154::0::1::::<><>::
 icon.svg::CompressedTexture2D::383280478923293990::1694731507::1694731510::1::::<><>::
 README.md::TextFile::-1::1694814353::0::1::::<><>::
 splash_screen.png::CompressedTexture2D::8570804774821566952::1695006787::1695006850::1::::<><>::
@@ -16,9 +16,9 @@ VoiceOrchestrator.svg::CompressedTexture2D::6700457965216183476::1621534317::169
 voice_instance.gd::GDScript::-1::1695335404::0::1::::VoiceInstance<>Node<>::
 voice_mic.gd::GDScript::-1::1695302137::0::1::::VoiceMic<>AudioStreamPlayer<>::
 voice_orchestrator.gd::GDScript::-1::1695335184::0::1::::VoiceOrchestrator<>Node<>::
-::res://Scenes/::1695335550
-main.tscn::PackedScene::1261677095850593114::1695335550::0::1::::<><>::res://Scripts/main.gd<>uid://508denx2qf6r::::res://Scenes/player.tscn<>uid://bmfcmd38iy45d::::res://Sprites/Tiles/tiles.tres<>res://addons/godot-voip/scripts/voice_orchestrator.gd
-player.tscn::PackedScene::2159284002393063443::1695335550::0::1::::<><>::res://Scripts/Player.gd
+::res://Scenes/::1695336316
+main.tscn::PackedScene::1261677095850593114::1695336316::0::1::::<><>::res://Scripts/main.gd<>uid://508denx2qf6r::::res://Scenes/player.tscn<>uid://bmfcmd38iy45d::::res://Sprites/Tiles/tiles.tres<>res://addons/godot-voip/scripts/voice_orchestrator.gd
+player.tscn::PackedScene::2159284002393063443::1695336316::0::1::::<><>::res://Scripts/Player.gd
 world.tscn::PackedScene::5046796521462869901::1694886851::0::1::::<><>::res://Scripts/world.gd<>uid://508denx2qf6r
 ::res://Scripts/::1695309115
 main.gd::GDScript::-1::1695256097::0::1::::<>Node2D<>::
@@ -26,6 +26,6 @@ main_menu.gd::GDScript::-1::1695309115::0::1::::<>Node2D<>::
 Player.gd::GDScript::-1::1695041092::0::1::::<>CharacterBody2D<>::
 world.gd::GDScript::-1::1694886851::0::1::::<>Node2D<>::
 ::res://Sprites/::1694966402
-::res://Sprites/Tiles/::1695334985
+::res://Sprites/Tiles/::1695336316
 tiles.png::CompressedTexture2D::8344869193441338783::1672668469::1694966403::1::::<><>::
-tiles.tres::TileSet::3239151761967791827::1695334985::0::1::::<><>::uid://dq5k1nsh01ttn::::res://Sprites/Tiles/tiles.png
+tiles.tres::TileSet::3239151761967791827::1695336316::0::1::::<><>::uid://dq5k1nsh01ttn::::res://Sprites/Tiles/tiles.png

@@ -1,3 +1,12 @@
 res://Scenes/main.tscn
 res://Sprites/Tiles/tiles.tres
+res://addons/discord_gd/classes/helpers.gd
 res://Scenes/player.tscn
+res://addons/discord_gd/classes/message.gd
+res://addons/discord_gd/classes/user.gd
+res://addons/discord_gd/classes/message_action_row.gd
+res://addons/discord_gd/classes/message_button.gd
+res://addons/discord_gd/classes/message_flags.gd
+res://addons/discord_gd/classes/bit_field.gd
+res://addons/discord_gd/classes/discord_interaction.gd
+res://addons/discord_gd/classes/embed.gd
