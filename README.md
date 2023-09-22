@@ -7,5 +7,5 @@ To install, download the app for your platform from the Releases tab in this Git
 %APPDATA%\Godot\app_userdata\Concord
 ### MacOS
 ~/Library/Application Support/Godot/app_userdata/Concord
-###Linux
+### Linux
 ~/.local/share/godot/app_userdata/Concord
