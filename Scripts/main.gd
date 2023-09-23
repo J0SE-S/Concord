@@ -10,6 +10,8 @@ var server_key : String
 var port = 10273
 
 func _ready():
+	if (!FileAccess.file_exists("user://auth.dat")):
+		close_game(1)
 	var auth = FileAccess.open("user://auth.dat", FileAccess.READ)
 	user_key = auth.get_line()
 	server_key = auth.get_line()
@@ -22,24 +24,21 @@ func _on_play_button_button_up():
 		add_player()
 		multiplayer.multiplayer_peer = peer
 	else:
-		_on_settings_button_button_up()
+		peer.create_client(server_key.hex_decode().get_string_from_utf8(), port)
+		multiplayer.multiplayer_peer = peer
 
 func _on_settings_button_button_up():
 	peer.create_client(server_key.hex_decode().get_string_from_utf8(), port)
 	multiplayer.multiplayer_peer = peer
 
-func _on_quit_button_button_up():
-	get_tree().quit()
+func close_game(code = 0):
+	get_tree().quit(code)
 
 func add_player(id = 1):
 	var player = player_scene.instantiate()
 	player.name = str(id)
 	player.set_name_tag(user_key.hex_decode().get_string_from_utf8())
 	network_objects_node.add_child(player)
-
-func exit_game(id):
-	rpc("del_player", id)
-	get_tree().quit()
 
 @rpc("any_peer", "call_local", "reliable")
 func del_player(id):

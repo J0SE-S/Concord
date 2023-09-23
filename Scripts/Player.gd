@@ -18,7 +18,8 @@ func set_name_tag(new_name):
 func _process(_delta):
 	if is_multiplayer_authority():
 		if Input.is_action_pressed("exit"):
-			get_tree().current_scene.exit_game(name)
+			get_tree().current_scene.rpc("del_player", name)
+			get_tree().current_scene.close_game()
 			pass
 		
 		var direction : Vector2 = Vector2(
