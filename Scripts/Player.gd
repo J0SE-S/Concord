@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var name_tag : Label
 
 const SPEED = 100.0
+const RUN_SPEED = 300.0
 
 func _enter_tree():
 	set_multiplayer_authority(str(name).to_int())
@@ -26,6 +27,9 @@ func _process(_delta):
 			Input.get_action_strength("right") - Input.get_action_strength("left"),
 			Input.get_action_strength("down") - Input.get_action_strength("up")
 		)
-		velocity = direction * SPEED
+		if (Input.is_action_pressed("run")):
+			velocity = direction * RUN_SPEED
+		else:
+			velocity = direction * SPEED
 		
 		move_and_slide()

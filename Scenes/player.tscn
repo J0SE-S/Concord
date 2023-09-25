@@ -16,7 +16,7 @@ properties/0/watch = false
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("cam", "name_tag")]
 z_index = 10
-collision_mask = 0
+collision_mask = 2
 script = ExtResource("1_gxivx")
 cam = NodePath("Camera2D")
 name_tag = NodePath("NameTag")
